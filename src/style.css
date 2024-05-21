@@ -1,0 +1,274 @@
+:root {
+  font-size: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: visible;
+}
+
+.finder {
+  background: url(../images/pattern-bg.png);
+  background-size: cover;
+  padding: 2rem 1.5rem 17.5rem;
+  text-align: center;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .finder {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.title {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.search-bar__input {
+  width: 100%;
+  max-width: 500px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 17%);
+  border: none;
+  outline: none;
+  padding: 1.5rem 2rem;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+}
+.search-bar__btn {
+  background-color: black;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0 1.5rem;
+  border-radius: 0 10px 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+.search-bar__btn:hover {
+  background-color: rgb(77, 77, 77);
+}
+.search-bar__btn::after {
+  display: block;
+
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: transparent;
+  border: 2px solid;
+  border-color: white white transparent transparent;
+  transform: rotate(45deg);
+}
+
+.info {
+  width: calc(100% - 3rem);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 1.5rem;
+  z-index: 10000;
+
+  opacity: 0;
+  transition: 0.5s;
+}
+@media (min-width: 1024px) {
+  .info {
+    width: 100%;
+    max-width: 1000px;
+    transform: translateY(50%);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+  }
+}
+
+.info__block {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  padding: 0 1rem;
+  position: relative;
+}
+.info__block:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.info__block-subtitle {
+  color: hsl(0, 0%, 59%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.3rem;
+}
+.info__block-title {
+  color: hsl(0, 0%, 17%);
+  font-weight: 700;
+  font-size: 2rem;
+}
+/* .maps {
+  min-height: calc(100vh - 200px);
+} */
+
+@media (min-width: 1024px) {
+  .info {
+    flex-direction: row;
+  }
+  .info__block {
+    margin-bottom: 0;
+  }
+  .info__block::after {
+    content: '';
+    width: 1px;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: hsla(0, 0%, 59%, 0.3);
+  }
+  .info__block:last-child::after {
+    display: none;
+  }
+  .info__block-title {
+    font-size: 2.4rem;
+  }
+}
+
+.maps {
+  opacity: 0;
+  transition: 0.5s;
+  width: auto;
+  height: 900px;
+}
+
+.loader {
+  width: 65px;
+  height: 65px;
+  border: 10px solid #05288a3d;
+  border-radius: 50%;
+  border-left-color: #05288a;
+  border-right-color: #0b256d;
+  animation: loader 1.4s linear infinite;
+  transition: 0.5s;
+  position: absolute;
+  z-index: 300000;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  background-color: aliceblue;
+
+  display: none;
+  transition: 0.5s;
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.show {
+  display: block;
+  transition: 0.5s;
+}
+
+.modalMessage {
+  position: absolute;
+  top: 2%;
+  right: 0;
+  width: 300px;
+  display: flex;
+  z-index: 20000;
+  padding: 10px;
+  margin: 0px 10px 0px 0px;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.modalMessage .containerMessage {
+  margin-left: 15px;
+}
+
+.modalMessage .containerMessage > p {
+  font-size: 20px;
+}
+
+.modalMessage .containerMessage > span {
+  font-size: 15px;
+}
+
+.modalMessage .closeModal {
+  display: block;
+  float: right;
+  margin-top: -7px;
+  cursor: pointer;
+}
+
+.imageError {
+  width: 50px;
+  height: 50px;
+}
+
+.imageError::before {
+  content: '\274C';
+  font-size: 30px;
+  border: 3px solid red;
+  border-radius: 50%;
+  padding: 6px;
+  position: relative;
+  top: 7px;
+}
+
+.active {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+@media (min-height: 740px) {
+  .maps {
+    height: 440px;
+  }
+}
+
+@media (min-height: 810px) {
+  .maps {
+    height: 540px;
+  }
+}
+
+@media (min-height: 910px) {
+  .maps {
+    height: 615px;
+  }
+}
+
+@media (min-height: 1024px) {
+  .maps {
+    height: 900px;
+  }
+}
