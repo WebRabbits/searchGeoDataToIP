@@ -1,5 +1,7 @@
 'use strict';
 
+//что-то
+
 // Import files
 import { validatIp, removeInputValue, initMap } from './helpers';
 
