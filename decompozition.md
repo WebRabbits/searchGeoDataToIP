@@ -4,7 +4,7 @@
 
 - Данные для авторизации в личном кабинете данного ресурса - grig5230@gmail.com / Casino123
 - API_KEY - apiKey=at_NngRNiGneutoXMqbrGJGZvWjT4fUa
-- URL-адрес получения данных при отправки запроса по Api с использованием полученного уникального API_KEY - https://geo.ipify.org/api/v2/country?apiKey=at_NngRNiGneutoXMqbrGJGZvWjT4fUa&ipAddress=8.8.8.8
+- URL-адрес получения данных при отправки запроса по Api с использованием полученного уникального API_KEY - https://geo.ipify.org/api/v2/country?apiKey=at_1z6v5PEbliuMymE8WUQAr6nnb8wNfa&ipAddress=8.8.8.8 (аккаунт grig5232@gmail.com / Casino123)
 
 - (Ещё один бесплатный API (10к запросов в месяц) на получение данных - https://ipwhois.io/ru/)
 

@@ -44,7 +44,7 @@ function getDate(getCurrentIp = ipInput.value) {
   if (validatIp(getCurrentIp)) {
     addLoader();
     fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=at_NngRNiGneutoXMqbrGJGZvWjT4fUa&ipAddress=${getCurrentIp}`
+      `https://geo.ipify.org/api/v2/country,city?apiKey=at_1z6v5PEbliuMymE8WUQAr6nnb8wNf&ipAddress=${getCurrentIp}`
     )
       .then((response) => {
         return response.json();
@@ -67,7 +67,8 @@ function getDate(getCurrentIp = ipInput.value) {
 }
 
 function handleKey(event) {
-  if (event.code === 'Enter') {
+  console.log(event);
+  if (event.key === 'Enter') {
     getDate();
   }
 }
