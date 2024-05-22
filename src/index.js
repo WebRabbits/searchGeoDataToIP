@@ -67,7 +67,6 @@ function getDate(getCurrentIp = ipInput.value) {
 }
 
 function handleKey(event) {
-  console.log(event);
   if (event.key === 'Enter') {
     getDate();
   }
